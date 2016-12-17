@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Visualization of the Temperatures and Carbon Dioxide Levels of the World" />
+    <meta name="keywords" content="Climate Change,Drought,Visualization,Temperatures,Carbon Dioxide" />
+    <title>The Melting World</title>
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Alegreya|Taviraj" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div id="note" class="row">
+        <p id="load" class="text-center">Loading ...</p>
+    </div>
+    <div class="row hide">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
+            <h1 class="text-center">The Melting World</h1>
+            <h3 class="text-center">A Look at World Sea Ice Levels</h3>
+        </div>
+    </div>
+    <div class="row charts opaque">
+        <div class="col-xs-12 col-offset-sm-1 col-sm-10 col-offset-md-1 col-md-10 col-lg-offset-1 col-lg-10">
+            <p>Monthly sea ice measurements began in the late 1970's. Polar ice has an important role in controlling
+            the planet's temperature due to a process called the <a href="https://en.wikipedia.org/wiki/Albedo">albedo effect</a>. Basically, this means
+                that the whiter a surface is the more light and heat it reflects. Sea ice, thus, reflects a great deal of
+            heat back out into space. The more ice, the cooler the temperature, resulting in the formation of more ice.
+            Over long time spans this can lead to an ice age The albedo effect works in the the opposite direction as well. If temperatures are
+                warm enough to melt the ice less heat is reflected into space. As melting continues open ocean is exposed. Open
+                ocean being much darker absorbs heat, further raising the temperature, resulting in further melting. Ice
+                levels naturally wax and wane with ice melting in the summer and increasing during the winter. However, large
+                swaths of the Arctic have historically been covered in ice year round, while Antarctic sea ice largely melts in the summer.
+            </p>
+
+            <p>The first set of charts show sea ice levels in the Arctic and Antarctic by year. The second set of
+            charts group the same data by month. Notice the steep decline in Arctic sea ice in recent years across
+                all months compared to the 1980's. Antarctic sea ice has actually been growing in recent years. Given
+            the rise in global temperatures it is unclear why this is happening. Several theories have been put forward. One is that the
+            whole in the ozone layer over Antarctica has changed the polar vortex around the continent, shielding it from
+            the greater global climate. Another theory involves. the <a href="https://en.wikipedia.org/wiki/Pacific_decadal_oscillation">
+                    Interdecadal Pacific Oscillation</a>. It has been in a negative phase which led to cooling in tropical regions of the Pacific,
+            thus leading to the Antarctic's sea ice increase. The Interdecadal Pacific Oscillation has recently flipped
+            into a positive phase, causing warming in the the tropical Pacific, which accoring to the theory this should
+            slow or reverse ice growth. So far this seems to be the case as ice levels were only average in 2015 and
+            fell to record low levels in November 2016.</p>
+
+            <h4 class="text-center">How do I Read the Charts?</h4>
+            <p>Each colored bar represents one month of ice level anomalies. Monthly
+                anomaly measurements date from 1979. Hover over a bar to see the
+                anomaly levels for that month. Scroll down to track ice levels over time.
+                Anomalies are based on the overall monthly average, 11.84 million square kilometers for the Arctic
+                and 12.04 million square kilometers for the Antarctic. NOAA data average values are not normalized by month.
+                Anomalies are relative to the 1981-2010 averages.</p>
+        </div>
+
+        <div id="temp-graphs" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="text-center">Arctic Sea Ice</h3>
+                <div id="north-legend" class="col-xs-12 col-sm-12 col-lg-12">
+                    <h3>Departure from Average (Million Square KM)</h3>
+                </div>
+                <div id="northern-ice" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="text-center">Antarctic Sea Ice</h3>
+                <div id="south-legend" class="col-xs-12 col-sm-12 col-lg-12">
+                    <h3>Departure from Average (Million Square KM)</h3>
+                </div>
+                <div id="southern-ice" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            </div>
+        <!--    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="text-center">World Sea Ice</h3>
+                <div id="world-legend" class="col-xs-12 col-sm-12 col-lg-12">
+                    <h3>Departure from Average (Million Square KM)</h3>
+                </div>
+                <div id="world-ice" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            </div>-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="text-center">Arctic Monthly Sea Ice</h3>
+                <div id="month-northern-legend" class="col-xs-12 col-sm-12 col-lg-12">
+                    <h3>Departure from Average (Million Square KM)</h3>
+                </div>
+                <div id="northern-month-ice" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="text-center">Antarctic Monthly Sea Ice</h3>
+                <div id="month-southern-legend" class="col-xs-12 col-sm-12 col-lg-12">
+                    <h3>Departure from Average (Million Square KM)</h3>
+                </div>
+                <div id="southern-month-ice" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-12">
+            <footer>
+                <ul class="list-unstyled">
+                    <li><a href="../index.php">Other Visualizations</a></li>
+                    <li><a href="../western_water">Western Water</a></li>
+                    <li><a href="mailto:farrelldlfarrell@gmail.com">Email</a></li>
+                    <li><a href="https://twitter.com/farrelldlfarrel">Twitter</a></li>
+                </ul>
+            </footer>
+        </div>
+        <div class="col-sm-12 col-lg-12">
+            <div class="col-md-offset-1 subfooter">
+                <h3 class="text-center">Data Sources</h3>
+                <ul class="list-unstyled text-center">
+                    <li><a href="https://www.ncdc.noaa.gov/snow-and-ice/extent">NOAA - National Centers
+                        for Environmental Information</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.0/d3.min.js" charset="utf-8"></script>
+<!--<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.11.0/d3-legend.min.js"></script>
+<script src="js/assets/d3-jetpack-v4.min.js"></script>
+<script src="js/assets/d3-tip.min.js"></script>
+<script src="js/assets/swoopy-drag/swoopy-drag.min.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javascript">
+    /*   var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-47256145-1']);
+     _gaq.push(['_trackPageview']);
+
+     (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })(); */
+</script>
+</body>
+</html>
