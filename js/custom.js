@@ -78,8 +78,31 @@ d3.queue()
             }
         ];
 
+        var  south_1997 =  [
+            {
+                "xVal": "02",
+                "yVal": 0,
+                "path": "M77,98L47,72",
+                "text": "Lowest extent on record",
+                "textOffset": [17, 108]
+            }
+        ];
+
+        var  south_2014 =  [
+            {
+                "xVal": "09",
+                "yVal": 0,
+                "path": "M67,99L86,74",
+                "text": "Greatest extent on record",
+                "textOffset": [10, 108]
+            }
+        ];
+
         annotate("#northern-ice-graphed0", north_1979);
         annotate("#northern-ice-graphed33", north_2012);
+
+        annotate("#southern-ice-graphed18", south_1997);
+        annotate("#southern-ice-graphed35", south_2014);
 
         months("northern-month-ice", northern);
         months("southern-month-ice", southern);
