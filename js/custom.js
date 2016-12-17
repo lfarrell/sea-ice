@@ -107,6 +107,62 @@ d3.queue()
         months("northern-month-ice", northern);
         months("southern-month-ice", southern);
 
+        var annotations_north_jan = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L271,75",
+                "text": "Lowest january level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
+        var annotations_north_mar = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L263,76",
+                "text": "Lowest march level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
+        var annotations_north_may = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L271,75",
+                "text": "Lowest may level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
+        var annotations_north_june = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L271,75",
+                "text": "Lowest june level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
+        var annotations_north_oct = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L271,75",
+                "text": "Lowest october level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
+        annotate("#northern-month-ice-graphed0", annotations_north_jan);
+        annotate("#northern-month-ice-graphed2", annotations_north_mar);
+        annotate("#northern-month-ice-graphed4", annotations_north_may);
+        annotate("#northern-month-ice-graphed5", annotations_north_june);
+        annotate("#northern-month-ice-graphed9", annotations_north_oct);
+
         function months(selector, datas) {
             month_names.forEach(function(e, i) {
                 var month = i + 1;
@@ -136,7 +192,7 @@ d3.queue()
                 return '<h4 class="text-center">' + stringDate(d.string_month) + ' (' + d.year + ')</h4>' +
                     '<ul class="list-unstyled">' +
                     '<li class="text-center"><h4>Sea Ice Extent</h4></li>' +
-                    '<li>Hist Avg: ' + num_format(d.long_term_avg) + ' M square km</li>' +
+                    '<li>Hist Avg: ' + num_format((d.value - d.anomaly)) + ' M square km</li>' +
                     '<li>Actual Avg: ' + num_format(d.value) + ' M square km</li>' +
                     '<li>Dept from Avg: ' + num_format(d.anomaly) + ' M square km</li>' +
                     '</ul>';
@@ -196,7 +252,7 @@ d3.queue()
 
             swoopy.annotations(annotations);
 
-            d3.select(selector + " svg").append("g.annotations").call(swoopy);
+            d3.select(selector + " .svg").append("g.annotations").call(swoopy);
         }
 
         /**
@@ -282,7 +338,6 @@ d3.queue()
             var legend_width = (width < 750 || month_graph) ? 130 : width - 10;
             var class_name = selector.substr(1);
             var svg = d3.select(selector).append("svg")
-                .classed("svg", true)
                 .classed("legend", true)
                 .attr("width", legend_width)
                 .attr("height", legend_height);
