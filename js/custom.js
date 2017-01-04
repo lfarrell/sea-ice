@@ -112,7 +112,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L271,75",
-                "text": "Lowest january level on record",
+                "text": "Lowest January level on record",
                 "textOffset": [133,113]
             }
         ];
@@ -122,7 +122,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L263,76",
-                "text": "Lowest march level on record",
+                "text": "Lowest March level on record",
                 "textOffset": [133,113]
             }
         ];
@@ -132,7 +132,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L271,75",
-                "text": "Lowest may level on record",
+                "text": "Lowest May level on record",
                 "textOffset": [133,113]
             }
         ];
@@ -142,7 +142,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L271,75",
-                "text": "Lowest june level on record",
+                "text": "Lowest June level on record",
                 "textOffset": [133,113]
             }
         ];
@@ -152,7 +152,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L271,75",
-                "text": "Lowest october level on record",
+                "text": "Lowest October level on record",
                 "textOffset": [133,113]
             }
         ];
@@ -162,7 +162,7 @@ d3.queue()
                 "xVal": "12",
                 "yVal": 0,
                 "path": "M208,97L271,75",
-                "text": "Lowest november level on record",
+                "text": "Lowest November level on record",
                 "textOffset": [133,113]
             }
         ];
