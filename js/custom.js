@@ -167,6 +167,16 @@ d3.queue()
             }
         ];
 
+        var annotations_south_dec = [
+            {
+                "xVal": "12",
+                "yVal": 0,
+                "path": "M208,97L271,75",
+                "text": "Lowest December level on record",
+                "textOffset": [133,113]
+            }
+        ];
+
         annotate("#northern-month-ice-graphed0", annotations_north_jan);
         annotate("#northern-month-ice-graphed2", annotations_north_mar);
         annotate("#northern-month-ice-graphed4", annotations_north_may);
@@ -174,6 +184,7 @@ d3.queue()
         annotate("#northern-month-ice-graphed9", annotations_north_oct);
         annotate("#northern-month-ice-graphed10", annotations_north_nov);
         annotate("#southern-month-ice-graphed10", annotations_north_nov);
+        annotate("#southern-month-ice-graphed11", annotations_south_dec);
 
         function months(selector, datas) {
             month_names.forEach(function(e, i) {
